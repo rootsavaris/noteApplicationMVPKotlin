@@ -7,6 +7,7 @@ import com.example.rafaelsavaris.noteapplicationmvp.utils.AppExecutors
 class NotesLocalDataSource private constructor(
         val appExecutors: AppExecutors,
         val notesDao: NotesDao
+
 ) : NotesDataSource{
 
     override fun getNotes(callback: NotesDataSource.LoadNotesCallback) {
@@ -35,6 +36,31 @@ class NotesLocalDataSource private constructor(
 
     override fun deleteAllNotes() {
         appExecutors.diskIO.execute { notesDao.deleteNotes() }
+    }
+
+    companion object {
+
+        private var INSTANCE: NotesLocalDataSource? = null
+
+        @JvmStatic
+        fun getInstance(appExecutors: AppExecutors, notesDao: NotesDao): NotesLocalDataSource {
+
+            if (INSTANCE == null){
+
+                synchronized(NotesLocalDataSource::javaClass){
+                    INSTANCE = NotesLocalDataSource(appExecutors, notesDao)
+                }
+
+            }
+
+            return INSTANCE!!
+
+        }
+
+        fun clearInstance(){
+            INSTANCE = null
+        }
+
     }
 
 }

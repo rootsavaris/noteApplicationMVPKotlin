@@ -6,7 +6,6 @@ import android.support.test.runner.AndroidJUnit4;
 import android.view.View;
 import android.widget.ListView;
 
-import com.example.rafaelsavaris.noteapplicationmvp.Injection;
 import com.example.rafaelsavaris.noteapplicationmvp.R;
 import com.example.rafaelsavaris.noteapplicationmvp.utils.TestUtils;
 
