@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NoteApplicationMVP</string>
+    <string name="app_name">NoteApplicationMVPKotlin</string>
     <string name="add_note">New Note</string>
     <string name="edit_note">Edit Note</string>
     <string name="navigation_view_header_title">Note App Simple MVP</string>

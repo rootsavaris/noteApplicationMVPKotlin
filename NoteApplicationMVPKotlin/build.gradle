@@ -1,20 +1,16 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.2.40'
 
-    ext.kotlinVersion = '1.2.30'
-    ext.gradlePluginVersion = '3.1.1'
+    ext.kotlin_version = '1.2.30'
 
     repositories {
-        jcenter()
         google()
+        jcenter()
     }
 
     dependencies {
-
-        classpath "com.android.tools.build:gradle:$gradlePluginVersion"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath 'com.android.tools.build:gradle:3.1.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -24,8 +20,8 @@ buildscript {
 
 allprojects {
     repositories {
-        jcenter()
         google()
+        jcenter()
     }
 }
 
@@ -53,5 +49,3 @@ ext {
     roomVersion = "1.0.0"
 
 }
-
-
